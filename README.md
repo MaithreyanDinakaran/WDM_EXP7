@@ -101,3 +101,4 @@ plt.show()
 ![web](https://github.com/MaithreyanDinakaran/WDM_EXP7/assets/119104032/33d9d873-54d0-4b72-aaba-02fceb4bd510)
 
 ### Result:
+Thus Link Analysis using HITS Algorithm in Python is successfully implemented.
