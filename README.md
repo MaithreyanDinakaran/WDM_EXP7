@@ -33,7 +33,7 @@ in a network of web pages based on the structure of the links between them.
 
 ### Program:
 
-```python
+```
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -44,16 +44,20 @@ def hits_algorithm(adjacency_matrix, max_iterations=100, tol=1.0e-6):
     
     for i in range(max_iterations):
         # Authority update
-
-             /*WRITE YOUR CODE HERE
+        new_authority_scores = np.dot(adjacency_matrix.T, hub_scores)
         
         # Hub update
-
-             /*WRITE YOUR CODE HERE
+        new_hub_scores = np.dot(adjacency_matrix, authority_scores)
+        
+        # Normalize scores
+        authority_norm = np.linalg.norm(new_authority_scores)
+        hub_norm = np.linalg.norm(new_hub_scores)
+        new_authority_scores /= authority_norm
+        new_hub_scores /= hub_norm
         
         # Check convergence
-
-             /*WRITE YOUR CODE HERE
+        authority_diff = np.linalg.norm(new_authority_scores - authority_scores)
+        hub_diff = np.linalg.norm(new_hub_scores - hub_scores)
         
         if authority_diff < tol and hub_diff < tol:
             break
@@ -92,6 +96,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+          
 ### Output:
+![web](https://github.com/MaithreyanDinakaran/WDM_EXP7/assets/119104032/33d9d873-54d0-4b72-aaba-02fceb4bd510)
 
 ### Result:
